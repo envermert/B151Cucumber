@@ -1,5 +1,6 @@
-@all
+
 Feature: US001 TechProEducation Sayfasi Testi
+  @g
   Scenario: TC01 Sayfada Arama Yapar
     Given kullanici techpro sayfasina gider
     Then arama kutusunda qa aratir

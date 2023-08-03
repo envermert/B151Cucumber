@@ -1,5 +1,6 @@
 package techproed.stepDefinition;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -8,6 +9,7 @@ import org.openqa.selenium.Keys;
 import techproed.pages.GooglePage;
 import techproed.utilities.ConfigReader;
 import techproed.utilities.Driver;
+import techproed.utilities.ReusableMethods;
 
 public class GoogleStepDefinition {
     GooglePage googlePage = new GooglePage();
@@ -40,5 +42,17 @@ public class GoogleStepDefinition {
     @Then("kullanici google arama kutusunda {string} ile propertiesden aratir")
     public void kullaniciGoogleAramaKutusundaIlePropertiesdenAratir(String str) {
         googlePage.aramaKutusu.sendKeys(ConfigReader.getProperty(str),Keys.ENTER);
+    }
+
+    @Then("kullanici data tableda verilen bilgileri aratir")
+    public void kullaniciDataTabledaVerilenBilgileriAratir(DataTable data) {
+        System.out.println(data.asList());
+        for (int i = 1; i <data.asList().size() ; i++) {
+            googlePage.aramaKutusu.sendKeys(data.asList().get(i),Keys.ENTER);
+            ReusableMethods.bekle(2);
+            Assert.assertTrue(Driver.getDriver().getTitle().contains(data.asList().get(i)));
+            ReusableMethods.bekle(2);
+            googlePage.aramaKutusu.clear();
+        }
     }
 }

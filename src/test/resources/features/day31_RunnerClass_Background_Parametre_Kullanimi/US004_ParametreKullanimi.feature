@@ -1,6 +1,7 @@
 @enver
 Feature: US004 TechProEducation Arma Testi
-@parametre
+
+  @parametre
   Scenario: TC01 Sayfada Arama Yapar
     Given kullanici "https://techproeducation.com" sayfasina gider
     Then arama kutusunda "mobile" aratir
@@ -19,14 +20,14 @@ Feature: US004 TechProEducation Arma Testi
     Given kullanici "https://techproeducation.com" sayfasina gider
     Then arama kutusunda "Java" aratir
     And sayfayi kapatir
-  
+
   Scenario: TC04 Facebook sayfasina gidilir
     Given kullanici "https://facebook.com" sayfasina gider
 
   Scenario: TC05 Techpro sayfasina gidilir Java aratilir
-  Given kullanici "https://techproeducation.com" sayfasina gider
-  Then arama kutusunda "java" aratir
-  And sayfayi kapatir
+    Given kullanici "https://techproeducation.com" sayfasina gider
+    Then arama kutusunda "java" aratir
+    And sayfayi kapatir
 
        #Parametreli method kullanimi icin file da "" icine aramak istedigimiz kelimeyi yazariz.
     # Daha sonra step definition da bir tane parametreli method olusturur.

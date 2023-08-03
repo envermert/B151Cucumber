@@ -25,5 +25,5 @@ public class ConfigReader {
 
         return properties.getProperty(key);//-->String olarak girdiğim key'in değerini return eder
     }
-
+//configuration.properties dosyasini silin ve yeniden olusturun ama once bir yere kopyalayin icindeki datalari ok hocam
 }
