@@ -1,12 +1,15 @@
+#Feature: US001 Google Sayfasinda Urun Aramasi
 Feature: US001 Google Sayfasinda Urun Aramasi
 
+  #Scenario: TC01 Arama Kutusunda Verilen Urunler Aratilir
+  @googleUrunler
   Scenario: TC01 Arama Kutusunda Verilen Urunler Aratilir
     Given kullanici "googleUrl" sayfasina properties ile gider
     And kullanici data tableda verilen bilgileri aratir
       | Urunler  |
-      | nokia
+      | nokia    |
       | samsung  |
-      | iphone    |
+      | iphone   |
       | motorola |
     And sayfayi kapatir
 
